@@ -1,0 +1,133 @@
+# Welcome to Cashly app👋
+
+This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+
+## Get started
+
+1. Install dependencies
+
+   ```bash
+   yarn install
+   ```
+
+2. Start the app
+
+   ```bash
+    npx expo start
+   ```
+   or with tunnel
+   
+   ```bash
+    npx expo start --tunnel
+   ```
+   or in development mode
+   ```bash
+   npx expo start --dev-client
+   ```
+
+### Development Build
+1. Start a development build for Android
+   ```
+   eas build --profile development --platform android --clear-cache
+   ```
+
+2. Run prebuild for Android
+   ```
+   npx expo prebuild --clean --platform android
+   ```
+
+3. Download the apk file from EAS Dev
+   
+4. Install the apk file into Android Emulator
+   
+   **Note: Make sure you have installed Android Studio**
+   ```
+   adb install path-to-.apk-file
+   ```
+
+In the output, you'll find options to open the app in a
+
+- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
+- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
+- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
+- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo 
+
+Note: This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+
+## About the project
+This is a cross-platform mobile app focusing on personal finance management. The mobile app allows user to manage transactions (e.g. incomes, expenses), categories of transactions (e.g. rents, utilities, entertainment, shopping), budgets (e.g. wants, needs, savings), and accounts (e.g. checking accounts, savings accounts). The mobile app interacts with Flask systems via REST APIs.
+
+## Project Structure
+- **app**: 
+  - **(tabs)**: Main pages - Home, Create Transaction, Budgets, Settings
+  - **Other files**: Sub pages - Account details, List of transactions, etc.
+- **api**: Provides services to interact with backend systems
+- **assets**: Contains SVG icons and PNG images
+- **components**: Reusable components - Header, Button, etc.
+- **constants**: Contains color scheme for both light & dark modes
+- **hooks**: Manage state, side effects, and other React features directly within functional components
+- **types**: Contains types definition for the app
+
+## Third-part Libraries
+These libraries are maintained outside of React Native core and the Expo team:
+
+- @react-native-async-storage/async-storage
+- @react-native-masked-view/masked-view
+- @react-native-picker/picker
+- @react-navigation/bottom-tabs
+- @react-navigation/native
+- @react-navigation/stack
+- axios
+- metro
+- metro-config
+- react-native-gifted-charts
+- react-native-modal
+- react-native-safe-area-context
+- react-native-screens
+- react-native-svg
+- react-native-vector-icons
+- react-native-web
+- react-native-webview
+
+## Third-party APIs
+These are open-source external APIs used by the mobile app:
+- Alpha Vantage 
+- ExchangeRate-API
+
+## User Interfaces
+<img width="1920" height="1080" alt="Untitled design" src="https://github.com/user-attachments/assets/b97f8238-ccfb-4282-91b2-9ae7bf0d1b5a" />
+
+<img width="1706" height="1080" alt="Untitled design (1)" src="https://github.com/user-attachments/assets/597a731b-a68f-481f-acc9-62455ee60667" />
+
+## 🔐 Google Sign-In Integration (@react-native-google-signin/google-signin)
+This app uses native Google Sign-In. Follow these steps to configure it:
+
+1. 🛠 **Firebase Setup**
+- Create a Firebase project at console.firebase.google.com
+- Enable Google Sign-In under Authentication > Sign-in method
+- Download google-services.json and place it in android/app/
+
+2. ⚙️ **Android Configuration:**
+- Add Google Services classpath
+- Apply com.google.gms.google-services plugin
+- Ensure google-services.json is correctly placed
+
+3. ⚙️ **iOS Configuration (if applicable)**
+- Add REVERSED_CLIENT_ID from GoogleService-Info.plist to your Info.plist under CFBundleURLTypes
+- Configure GoogleSignIn in your AppDelegate.m or Swift equivalent
+
+4. **Run prebuild and start a development build**
+
+## Learn more
+To learn more about developing your project with Expo, look at the following resources:
+
+- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
+- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+
+## Join the community
+
+Join our community of developers creating universal apps.
+
+- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
+- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+

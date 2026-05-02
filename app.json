@@ -1,0 +1,67 @@
+{
+  "expo": {
+    "name": "Cashly",
+    "slug": "cashly",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "cashly",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": false,
+    "jsEngine": "hermes",
+    "splash": {
+      "image": "./assets/images/splashscreen.png",
+      "backgroundColor": "#3C8CE7"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.jacklezac.cashly",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false,
+        "UIBackgroundModes": ["remote-notification"],
+        "NSUserNotificationsUsageDescription": "Allow Cashly to send you notifications about transactions and spending habits."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "googleServicesFile": "./google-services.json",
+      "package": "com.jacklezac.cashly"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "extra": {
+      "apiCoreUrl": "http://10.0.2.2:5000",
+      "eas": {
+        "projectId": "22be8df4-da4e-47f8-a26f-6263803326c7"
+      },
+      "GOOGLE_CLIENT_ID": "879691933449-5671p88n8fci3vch8281ajpq0msv9tdv.apps.googleusercontent.com"
+    },
+    "plugins": [
+      "@react-native-google-signin/google-signin",
+      "expo-router",
+      "expo-dev-client",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/splashscreen.png",
+          "resizeMode": "contain",
+          "backgroundColor": "#3C8CE7"
+        }
+      ],
+      "expo-font",
+      "expo-web-browser"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "packagerOpts": {
+    "hostType": "localhost"
+    }
+  }
+}

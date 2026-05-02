@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "879691933449",
+    "project_id": "cashly-dd366",
+    "storage_bucket": "cashly-dd366.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:879691933449:android:cb327546eb89fb32ead5d8",
+        "android_client_info": {
+          "package_name": "com.jacklezac.cashly"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtOYbKJAM3LSc_7VI-d0Js698Ohr5EaFI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
