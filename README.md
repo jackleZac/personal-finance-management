@@ -68,6 +68,9 @@ This is a cross-platform mobile app focusing on personal finance management. The
 - **hooks**: Manage state, side effects, and other React features directly within functional components
 - **types**: Contains types definition for the app
 
+## User Interface
+![Main Screens](screenshots/coinpilot-tabs-design.PNG)
+
 ## Third-part Libraries
 These libraries are maintained outside of React Native core and the Expo team:
 
@@ -93,11 +96,6 @@ These libraries are maintained outside of React Native core and the Expo team:
 These are open-source external APIs used by the mobile app:
 - Alpha Vantage 
 - ExchangeRate-API
-
-## User Interfaces
-<img width="1920" height="1080" alt="Untitled design" src="https://github.com/user-attachments/assets/b97f8238-ccfb-4282-91b2-9ae7bf0d1b5a" />
-
-<img width="1706" height="1080" alt="Untitled design (1)" src="https://github.com/user-attachments/assets/597a731b-a68f-481f-acc9-62455ee60667" />
 
 ## 🔐 Google Sign-In Integration (@react-native-google-signin/google-signin)
 This app uses native Google Sign-In. Follow these steps to configure it:
@@ -125,7 +123,6 @@ To learn more about developing your project with Expo, look at the following res
 - [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
 
 ## Join the community
-
 Join our community of developers creating universal apps.
 
 - [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
