@@ -11,45 +11,27 @@ import { SvgProps } from 'react-native-svg';
 export default function TransactionDetails() {
   const params = useLocalSearchParams();
   const transaction = JSON.parse(params.transaction as string) as Transaction;
-  const categories = JSON.parse(params.categories as string) as Category[];
-  const accounts = JSON.parse(params.accounts as string) as Account[];
 
   // Theme colors
   const backgroundColor = useThemeColor({}, 'background');
   const textColor = useThemeColor({}, 'text');
   const iconColor = useThemeColor({}, 'icon');
   const borderColor = useThemeColor({}, 'border');
-
-  // Map categories and accounts for display
-  const categoryMap = categories.reduce((acc: { [key: number]: Category }, cat) => {
-    acc[cat.category_id] = cat;
-    return acc;
-  }, {});
-  
-  const accountMap = accounts.reduce((acc: { [key: number]: string }, account) => {
-    acc[account.account_id] = account.name;
-    return acc;
-  }, {});
-
-  const category = categoryMap[transaction.category_id] || { name: 'Unknown', icon_id: '0' };
   
   // Get the correct SVG icon component from categoryMapping
-  const matchingIcons = getIconsById(parseInt(category.icon_id));
+  const matchingIcons = getIconsById(transaction.icon_id);
   const CategoryIcon: React.FC<SvgProps> | null = matchingIcons.length > 0 ? matchingIcons[0].source : null;
   
   // Fallback to Uncategorized icon if no category icon found
   const UncategorizedIcon = getUncategorizedIcon();
   
   const isExpense = transaction.type === 'expense';
-  const accountName = accountMap[transaction.account_id] || 'Unknown Account';
 
   const handleEdit = () => {
     router.push({
       pathname: '/updateTransaction',
       params: {
         transaction: JSON.stringify(transaction),
-        categories: JSON.stringify(categories),
-        accounts: JSON.stringify(accounts),
       },
     });
   };
@@ -70,14 +52,14 @@ export default function TransactionDetails() {
             <UncategorizedIcon width={60} height={60} />
           )}
         </View>
-        <Text style={[styles.categoryName, { color: textColor }]}>{category.name}</Text>
+        <Text style={[styles.categoryName, { color: textColor }]}>{transaction.category_name}</Text>
         <Text style={[styles.amount, { color: isExpense ? '#FF3B30' : '#34C759' }]}>
           {isExpense ? '-' : '+'}
           {transaction.amount} {transaction.currency}
         </Text>
         <View style={[styles.detailRow, { borderBottomColor: borderColor }]}>
           <Text style={[styles.label, { color: iconColor }]}>Account:</Text>
-          <Text style={[styles.value, { color: textColor }]}>{accountName}</Text>
+          <Text style={[styles.value, { color: textColor }]}>{transaction.account_name}</Text>
         </View>
         <View style={[styles.detailRow, { borderBottomColor: borderColor }]}>
           <Text style={[styles.label, { color: iconColor }]}>Date:</Text>

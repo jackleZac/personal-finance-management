@@ -9,7 +9,7 @@ import { getGenericIcon } from '@/assets/genericIconsMapping';
 
 interface HeaderProps {
   title: string;
-  variant?: 'home' | 'simple' | 'createTransaction' | 'back' | 'backModal' | 'closeModal';
+  variant?: 'home' | 'simple' | 'back' | 'backModal' | 'closeModal';
   onCreatePress?: () => void;
   onEditPress?: () => void;
   onCloseModalPress?: () => void;
@@ -108,6 +108,11 @@ const Header: React.FC<HeaderProps> = ({
             </TouchableOpacity>
           ) : (
             <View style={styles.menuPlaceholder} />
+          )}
+          {variant === 'back' && onCreatePress && (
+            <TouchableOpacity style={styles.iconButton} onPress={onCreatePress}>
+              <AddIcon width={28} height={28} fill="#3C8CE7"/>
+            </TouchableOpacity>
           )}
         </>
       ) : variant === 'backModal' ? (

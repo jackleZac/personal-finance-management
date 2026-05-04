@@ -69,7 +69,9 @@ This is a cross-platform mobile app focusing on personal finance management. The
 - **types**: Contains types definition for the app
 
 ## User Interface
-![Main Screens](screenshots/coinpilot-tabs-design.PNG)
+![Main Screens](screenshots/coinpilot-tabs-1.png)
+![Main Screens](screenshots/coinpilot-tabs-2.png)
+![Screens](screenshots/coinpilot-sub-pages.png)
 
 ## Third-part Libraries
 These libraries are maintained outside of React Native core and the Expo team:

@@ -6,7 +6,6 @@ import {
   TouchableOpacity,
   FlatList,
   ActivityIndicator,
-  Alert,
   ScrollView,
 } from 'react-native';
 import { useRouter } from 'expo-router';
@@ -134,7 +133,7 @@ export default function CustomCategories() {
   return (
     <>
       <View style={[styles.container, { backgroundColor }]}>
-        <Header title="Custom Categories" variant="back" />
+        <Header title="Custom Categories" variant="back" onCreatePress={() => setIsCreateCategoryModalVisible(true)}/>
         <ScrollView style={[styles.content, { backgroundColor }]}>
           {categories.length === 0 ? (
             <View style={styles.emptyContainer}>
@@ -150,12 +149,6 @@ export default function CustomCategories() {
               contentContainerStyle={styles.listContent}
             />
           )}
-          <TouchableOpacity
-            style={styles.addButton}
-            onPress={() => setIsCreateCategoryModalVisible(true)}
-          >
-            <Text style={styles.addButtonText}>Create Category</Text>
-          </TouchableOpacity>
         </ScrollView>
       </View>
 
@@ -182,7 +175,7 @@ const styles = StyleSheet.create({
   content: {
     flex: 1,
     paddingHorizontal: 16,
-    paddingTop: 20,
+    paddingVertical: 16,
   },
   listContent: {
     paddingBottom: 20,

@@ -7,7 +7,6 @@ import {
     ScrollView,
     Alert,
     FlatList,
-    Button as FastLinkButton,
     TouchableWithoutFeedback,
     Keyboard,
     StyleSheet,
@@ -406,9 +405,7 @@ const CreateAccount: React.FC<CreateAccountProps> = ({ onClose }) => {
     const [type, setType] = useState('');
     const [targetAmount, setTargetAmount] = useState(0);
     const [note, setNote] = useState('');
-    const { token, userId } = useAuth();
-    const [fastLinkData, setFastLinkData] = useState<FastLinkData | null>(null);
-    const [showFastLinkModal, setShowFastLinkModal] = useState(false);
+    const {token, userId} = useAuth();
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string>('');
 
@@ -546,14 +543,6 @@ const CreateAccount: React.FC<CreateAccountProps> = ({ onClose }) => {
                         onPress={() => setIsTypeModalVisible(true)}
                     />
                 </ScrollView>
-
-                <View style={styles.fastLinkButton}>
-                    <FastLinkButton
-                    title="Link Demo Bank Account"
-                    onPress={() => setShowFastLinkModal(true)}
-                    disabled={!fastLinkData || loading}
-                    />
-                </View>
 
                 <Button
                     onPress={handleConfirm}

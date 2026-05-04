@@ -35,7 +35,6 @@ import Header from '@/components/Header';
 import AccountCard from '@/components/AccountCard';
 import CreateAccountCard from '@/components/CreateAccountCard';
 import InfoModal from '@/components/InfoModal';
-import { SvgProps } from 'react-native-svg';
 import WebSocketService from '@/api/webSocketService';
 
 type DonutMode = 'asset' | 'debt' | 'income' | 'expense';
@@ -614,11 +613,11 @@ export default function Home() {
                 return (
                   <AccountCard
                     account={item}
-                    percentage={item.percentage || 0}
+                    percentage={item.target_amount ? Math.min((item.balance / item.target_amount!) * 100, 100) : 0}
                     onPress={() =>
                       router.push({
                         pathname: '/accountDetails',
-                        params: { accountId: item.account_id },
+                        params: { account: JSON.stringify(item) },
                       })
                     }
                   />
