@@ -1,8 +1,18 @@
 # Welcome to Cashly app👋
+This is a cross-platform personal finance management mobile app built with React Native (Expo). Its core functionalities include tracking value of assets and debts across multiple currencies, categorizing transactions, analyzing spending habits, managing budgets, and generating monthly reports.
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Project Structure
+- **app**: 
+  - **(tabs)**: Main pages - Home, Create Transaction, Budgets, Settings
+  - **Other files**: Sub pages - Account details, List of transactions, etc.
+- **api**: Provides services to interact with backend systems
+- **assets**: Contains SVG icons and PNG images
+- **components**: Reusable components - Header, Button, etc.
+- **constants**: Contains color scheme for both light & dark modes
+- **hooks**: Manage state, side effects, and other React features directly within functional components
+- **types**: Contains types definition for the app
 
-## Get started
+## Setup Instructions
 
 1. Install dependencies
 
@@ -53,20 +63,6 @@ In the output, you'll find options to open the app in a
 - [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo 
 
 Note: This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## About the project
-This is a cross-platform mobile app focusing on personal finance management. The mobile app allows user to manage transactions (e.g. incomes, expenses), categories of transactions (e.g. rents, utilities, entertainment, shopping), budgets (e.g. wants, needs, savings), and accounts (e.g. checking accounts, savings accounts). The mobile app interacts with Flask systems via REST APIs.
-
-## Project Structure
-- **app**: 
-  - **(tabs)**: Main pages - Home, Create Transaction, Budgets, Settings
-  - **Other files**: Sub pages - Account details, List of transactions, etc.
-- **api**: Provides services to interact with backend systems
-- **assets**: Contains SVG icons and PNG images
-- **components**: Reusable components - Header, Button, etc.
-- **constants**: Contains color scheme for both light & dark modes
-- **hooks**: Manage state, side effects, and other React features directly within functional components
-- **types**: Contains types definition for the app
 
 ## User Interface
 ![Main Screens](screenshots/coinpilot-tabs-1.png)
